@@ -498,7 +498,8 @@ label{
     position: relative;
     margin: 0;
     background-color: #fff;
-    padding: 36.5%;
+    padding-top: 36.5%; padding-bottom: 36.5%; /* Padding relativo para el espacio vertical */
+    padding-left: 0; padding-right: 0; /* Padding horizontal */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -596,7 +597,8 @@ label{
 /*FALTA ARREGLAR EL RESPONSIVE*/
 @media only screen and (max-width: 1024px) {   /*ARREGLAR EL RESPONSIVE DE LA IMAGEN*/
     .cobertura-space-container{
-        padding: 50%;
+        padding-top: 50%; padding-bottom: 50%; /* Padding relativo para el espacio vertical */
+        padding-left: 0; padding-right: 0; /* Padding horizontal */
     }
     .text-space-container-cobertura{
         top: 16%;
@@ -654,6 +656,9 @@ label{
 }
 
 @media only screen and (max-width: 675px){
+    .cobertura-space-container{
+        padding-top: 60%; padding-bottom: 60%; /* Padding relativo para el espacio vertical */
+    }
     .imagen-space-container-cobertura .text-cartel{
         bottom: 32%;       
     }
@@ -675,9 +680,12 @@ label{
     }
 }
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 500px) {
+    .cobertura-space-container{
+        padding-top: 75%; padding-bottom: 75%; /* Padding relativo para el espacio vertical */
+    }
     .text-space-container-cobertura{
-        top: 22.5%;
+        top: 21.5%;
     }
     .text-space-container-cobertura strong{
         font-size: 15px;
@@ -689,27 +697,22 @@ label{
         top: 35%;
     }
     .imagen-space-container-cobertura img{
-        height: 50%;
+        height: 58%;
     }
     .imagen-space-container-cobertura .text-cartel strong h1{
         font-size: 23px;
     }
     .imagen-space-container-cobertura p{
-        bottom: 19%;
+        bottom: 22%;
         font-size: 12px;
     }
     .imagen-space-container-cobertura a{
+        bottom: 9%;
         padding: 10px 30px;;
     }
 }
 
 @media only screen and (max-width: 432px){
-    .text-space-container-cobertura{
-        top: 26.5%;
-    }
-    .imagen-space-container-cobertura{
-        top: 40%;
-    }
     .text-space-container-cobertura strong{
         font-size: 15px;
     }
@@ -721,19 +724,19 @@ label{
     }
     .imagen-space-container-cobertura .text-cartel{
         padding: 12px;
-        bottom: 42%;
+        bottom: 47.5%;
     }
     .imagen-space-container-cobertura .text-cartel strong h1{
         font-size: 20px;
     }
     .imagen-space-container-cobertura p{
-        bottom: 18.3%;
-        font-size: 12px;
+        bottom: 27.5%;
+        font-size: 12.5px;
     }
     .imagen-space-container-cobertura a{
-        bottom: 3.2%;
+        bottom: 12%;
         padding: 10px 20px;
-        font-size: 17px;
+        font-size: 16px;
     }
 }
 
