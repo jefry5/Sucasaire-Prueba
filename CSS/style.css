@@ -776,6 +776,7 @@ label{
 }
 .blog-space-container-card{
     width: 100%;
+    max-width: 1200px;
     padding-left: 7.5%; padding-right: 7.5%;
     margin: 0;
     display: flex;
