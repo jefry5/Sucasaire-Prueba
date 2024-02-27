@@ -764,7 +764,7 @@ label{
 
 /*---------------------*/
 
-/*Blog Espacio ARREGLAR EL RESPONSIVE*/
+/*Blog Espacio ARREGLAR EL RESPONSIVE y VER PORQUE SE DESCUADRA EN PANTALLA COMPLETA*/
 .blog-space-container{
     position: relative;
     background-color: #F2F2F2;
@@ -774,44 +774,47 @@ label{
     flex-direction: column;
     padding-top: 2.5%; padding-bottom: 3%;
 }
-.blog-space-container-card{
+.blog-swiper{
     width: 100%;
-    max-width: 1200px;
-    padding-left: 7.5%; padding-right: 7.5%;
-    margin: 0;
-    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;    
 }
-.card{
+.swiper-wrapper{
     width: 100%;
+    margin: 0;
+}
+.swiper-slide{
+    width: 30.35%;
     margin: 20px;
     border-radius: 6px;
-    overflow: hidden;
+    overflow-y: hidden;
     background: #fff;
     box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
     cursor: default;
     transition: all 400ms ease;
 }
-.card:hover{
+.swiper-slide:hover{
     box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
     transform: translateY(-3%);
 }
-.card img{
+.swiper-slide img{
     width: 100%;
     height: 210px;
 }
-.card .blog-contenido{
+.swiper-slide .blog-contenido{
     padding: 15px;
     text-align: center;
 }
-.card .blog-contenido p{
+.swiper-slide .blog-contenido p{
     line-height: 1.5;
     color: #6a6a6a;
 }
-.card .blog-contenido h3{
+.swiper-slide .blog-contenido h3{
     font-weight: 400;
     margin-bottom: 15px;
-}
-.card .blog-contenido a{
+} 
+.swiper-slide .blog-contenido a{
     text-decoration: none;
     display: inline-block;
     padding: 10px;
@@ -822,7 +825,7 @@ label{
     cursor: pointer;
     transition: all 400ms ease;
 }
-.card .blog-contenido a:hover{
+.swiper-slide .blog-contenido a:hover{
     background: #2fb4cc;
     color: #fff;
 }
@@ -860,7 +863,9 @@ label{
     background-color: #121212;
     color: #FF2258;
 }
+@media screen and (max-width: 991px){ /*ARREGLAR RESPONSIVE*/
 
+}
 
 /*Pie de Pagina*/
 .pie-pagina{

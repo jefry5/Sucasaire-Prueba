@@ -56,7 +56,7 @@ function autoShowSlides(){
     for (var i=0; i<slides.length; i++){
         slides[i].style.display = "none";
     }
-    autoSlideIndex++;
+    autoSlideIndex++; 1
     if(autoSlideIndex > slides.length){
         autoSlideIndex = 1;
     }
@@ -81,18 +81,37 @@ if(window.innerWidth <= 991){
 
 
 //ESPACIO DE BLOG SLIDER SWIPPER ***FALTA ARREGLAR***
-var swiper = new Swiper(".slide-content-blog", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    slidesPerGroup: 3,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+
+var numSliderPerView;
+var swiperButton1 = document.getElementsByClassName("swiper-button-next");
+var swiperButton2 = document.getElementsByClassName("swiper-button-prev");
+var swiperButton3 = document.getElementsByClassName("swiper-pagination");
+
+if(window.innerWidth <= 991){
+    if(window.innerWidth <= 650){
+        numSliderPerView = 1;
+    }else{
+        numSliderPerView = 2;
+    }
+    var swiper = new Swiper(".blog-swiper", {
+        slidesPerView: numSliderPerView,
+        spaceBetween: 30,
+        slidesPerGroup: 1,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+}else{ /*Falta arreglar el none*/
+    swiperButton1.style.display = "none";
+    swiperButton2.style.display = "none";
+    swiperButton3.style.display = "none";
+}
+
+
