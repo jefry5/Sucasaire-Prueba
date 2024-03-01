@@ -31,15 +31,13 @@ header{
     align-items: center;
     padding: 0 5%;
     height: 100px;
-    z-index: 2;
+    z-index: 3;
 }
-/*------------- PRUEBA*/ 
 .menu-container {
     display: flex;
     align-items: center;
     margin-top: 15px;
 }
-/*------------- PRUEBA*/ 
 header .menu ul{
     list-style: none;  
 }
@@ -78,7 +76,6 @@ header .menu ul li ul li a{
 header .menu ul li:hover > ul{
     display: initial;
 }
-/*-------------*/
 @keyframes fadeInOut {
     0%{
         background-color: rgba(18, 18, 18, 0);
@@ -541,8 +538,6 @@ label{
     width: 85%;
     height: 65%;
 }
-
-
 .imagen-space-container-cobertura p{
     position: absolute;
     margin-left: 8%; margin-right: 8%; /*Tienen que tener el mismo valor de margen*/
@@ -740,29 +735,6 @@ label{
     }
 }
 
-/*---------------------*/
-
-
-/*INDEX-NOSOTROS-ESPACIO*/
-.nosotros-container-2{
-    position: relative;
-    margin: 0;
-    background-color: #7fccff;
-    padding: 75px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-}
-.nosotros-container-2 .text-container-nosotros{
-    font-size: 20px;
-}
-@media screen and (max-width: 991px) {
-    .nosotros-container-2 .text-container-nosotros{
-        font-size: 10px;
-    }
-}
-
-/*---------------------*/
 
 /*Blog Espacio ARREGLAR EL RESPONSIVE y VER PORQUE SE DESCUADRA EN PANTALLA COMPLETA*/
 .blog-space-container{
@@ -902,7 +874,7 @@ label{
         flex: 0 0 45%; /* Establece el ancho de cada slide en el contenedor padre */
     }    
 }
-@media (width <= 650px){
+@media (width <= 650px){        /*ARREGLAR: EL SLIDER NO CAMBIA DE POSICIÓN CORRECTA AL MOMENTO DE DESLIZAR A LA IZQUIERDA*/
     .swiper-slide{
         left: 96.8%;
         flex: 0 0 85%; /* Establece el ancho de cada slide en el contenedor padre */
@@ -927,6 +899,56 @@ label{
     .blog-space-container-button{
         padding-top: 8%;
         padding-bottom: 5%;
+    }
+}
+
+/*Carrusel de Logos*/
+.logos{
+    position: relative;
+    background-color: white;
+    padding: 40px 0;
+    white-space: nowrap;
+}
+.logos:before,
+.logos:after{
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+.logos:before{
+    left: 0;
+    background: linear-gradient(to left,rgba(255,255,255,0), white);
+}
+.logos:after{
+    right: 0;
+    background: linear-gradient(to right,rgba(255,255,255,0), white);
+}
+.logos:hover .logos-slide{
+    animation-play-state: paused;
+}
+.logos-slide{
+    display: inline-block;
+    animation: 35s slideLogos infinite linear;
+}
+.logos-slide img{
+    height: 50px;
+    margin: 0 40px;
+}
+@keyframes slideLogos {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@media (width<=700px){
+    .logos:before,
+    .logos:after{
+        width: 150px;
     }
 }
 
@@ -960,12 +982,19 @@ label{
 }
 .pie-pagina .grupo-1 .box h2{
     color: #fff;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     font-size: 20px;
 }
 .pie-pagina .grupo-1 .box p{
     color: #efefef;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
     margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .box p img{
+    width: 35px;
+    margin-right: 15px;
 }
 .pie-pagina .grupo-1 .red-social a{
     display: inline-block;
