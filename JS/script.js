@@ -109,9 +109,9 @@ if(window.innerWidth <= 991){
         },
       });
 }else{ /*Falta arreglar el none*/
-    swiperButton1.style.display = "none";
-    swiperButton2.style.display = "none";
-    swiperButton3.style.display = "none";
+    swiperButton1.style.display = "initial";
+    swiperButton2.style.display = "initial";
+    swiperButton3.style.display = "initial";
 }
 
 
