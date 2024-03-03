@@ -287,15 +287,20 @@ label{
     justify-content: center;
     align-items: center;
     text-align: center;
-    animation: valoresDesplazamiento 1.8s ease;
 }
 .box-valores img{
     width: 60px;
 }
+#valoresAnimado1,
+#valoresAnimado2,
+#valoresAnimado3,
+#valoresAnimado4{
+    visibility: collapse;
+}
 @keyframes valoresDesplazamiento {
     from {
         transform: translateY(50%);
-        opacity: 0.1;
+        opacity: 0;
     }
     to {
         transform: translateY(0);
