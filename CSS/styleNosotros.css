@@ -281,14 +281,13 @@ label{
     line-height: 0.4;
 }
 .box-valores{
-    margin: 0 35px;
-    margin-top: 50px; margin-bottom: 50px;
+    margin: 50px 35px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    animation: valoresDesplazamiento 1.5s ease;
+    animation: valoresDesplazamiento 1.8s ease;
 }
 .box-valores img{
     width: 60px;
@@ -296,11 +295,22 @@ label{
 @keyframes valoresDesplazamiento {
     from {
         transform: translateY(50%);
-        opacity: 0.4;
+        opacity: 0.1;
     }
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+@media (width <= 700px){
+    .valores-imagenes-texto{
+        margin: 20px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .box-valores{
+        margin: 15px 0;
     }
 }
 
