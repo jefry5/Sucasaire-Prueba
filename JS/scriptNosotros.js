@@ -55,3 +55,18 @@ window.addEventListener('scroll',function(){
         }, tiempoAnimacion);
     }
 })
+
+//Contador Animación
+const color_fondo = document.getElementById('color-fondo');
+const numero = document.getElementById('numero');
+let cantidad = 0;
+
+let tiempoContador = setInterval(() => {
+    cantidad+=1;
+    color_fondo.style.height = `${cantidad}%`;
+    numero.textContent = cantidad;
+
+    if(cantidad == 100){
+        clearInterval(tiempoContador);
+    }
+}, 80);

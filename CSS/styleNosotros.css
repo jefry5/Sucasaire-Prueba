@@ -212,19 +212,33 @@ label{
     background-color: #fff;
 }
 .primera-columna{
-    padding: 0 15px;
+    padding: 150px 60px 40px 180px;
     text-align: justify;
+    line-height: 1.5;
+}
+.primera-columna h1{
+    color: rgb(73, 71, 71);
+    font-weight: lighter;
+    font-size: 24.5px;
+}
+.primera-columna p{
+    color: rgb(116, 110, 110);
+}
+.primera-columna h1 strong{
+    color: rgb(197, 53, 137);
 }
 .segunda-columna{
+    position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 25px 0;
 }
 .imagen-contenedor{
-    position: relative;
-    width: 90%;
-    height: 100%;
+    position: absolute;
+    bottom: 0;
+    width: 85%;
+    height: 87%;
 }
 .imagen-contenedor img{
     width: 100%;
@@ -233,17 +247,49 @@ label{
 .imagen-contenedor .box-columna{
     position: absolute;
     background-color: #fff;
-    padding: 20px 10%;
-    bottom: 0;
+    padding: 0 0;
+    bottom: -11.5%;
     left: 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
 }
-.box-columna strong{
-    text-align: center;
+.texto-box-columna{
+    padding: 50px 50px 50px 0;
+    text-align: justify;
 }
-
+.texto-box-columna strong{
+    font-weight: lighter;
+    font-size: 22px;
+}
+.contenedor-numero{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+}
+.color-fondo{
+    position: absolute;
+    height: 0;
+    width: 100%;
+    background-color: rgb(197, 53, 137);
+}
+.numero{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 60px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #555;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-180deg);
+    mix-blend-mode: screen;
+}
 /*Espacio de Mision y Visión*/
 .nosotros-misionVision-container{
     padding-top: 80px; padding-bottom: 50px;
