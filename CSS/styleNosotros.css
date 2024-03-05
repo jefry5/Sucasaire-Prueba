@@ -201,6 +201,17 @@ label{
     font-size: 35px;
     font-weight: bold;
 }
+@media (width <= 700px){
+    .text-container-nosotros{
+        line-height: 1.5;
+    }
+    .text-container-nosotros h1{
+        font-size: 17px;
+    }
+    .text-container-nosotros h1 strong{
+        font-size: 20px;
+    }
+}
 
 /*NOSOTROS-TEXTO-ESPACIO*/      /*FALTA ARREGLAR EL RESPONSIVE Y AGREGARLE DETALLES*/
 .nosotros-texto-container{
@@ -219,7 +230,7 @@ label{
 .primera-columna h1{
     color: rgb(73, 71, 71);
     font-weight: lighter;
-    font-size: 24.5px;
+    font-size: 22.5px;
 }
 .primera-columna p{
     color: rgb(116, 110, 110);
@@ -256,12 +267,14 @@ label{
     align-items: center;
 }
 .texto-box-columna{
+    position: relative;
     padding: 50px 50px 50px 0;
     text-align: justify;
 }
-.texto-box-columna strong{
-    font-weight: lighter;
-    font-size: 22px;
+.texto-box-columna strong{      /*ARREGLAR PARA QUE "COLABORADORES" TAMBIEN SE COMPLETE AL IGUAL QUE EL NÚMERO*/
+    font-weight: bold;
+    font-size: 20.5px;
+    color: rgb(73, 71, 71);
 }
 .contenedor-numero{
     position: relative;
@@ -271,8 +284,12 @@ label{
 }
 .color-fondo{
     position: absolute;
+    margin-top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
     height: 0;
-    width: 100%;
+    max-height: 41%;
+    width: 75%;
     background-color: rgb(197, 53, 137);
 }
 .numero{
@@ -282,7 +299,7 @@ label{
     font-size: 60px;
     font-family: sans-serif;
     font-weight: bold;
-    color: #555;
+    color: rgb(73, 71, 71);
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -290,6 +307,48 @@ label{
     transform: rotate(-180deg);
     mix-blend-mode: screen;
 }
+@media (width < 1140px){
+    .primera-columna{
+        padding: 60px 50px 30px 90px;       
+    }
+    .segunda-columna{
+        justify-content: center;
+    }
+}
+@media (width <= 800px){
+    .nosotros-texto-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .primera-columna{
+        padding: 50px 50px 30px 70px; 
+    }
+    .primera-columna h1{
+        font-size: 18.5px;
+    }
+    .primera-columna p{
+        font-size: 14px;
+    }
+    .imagen-contenedor{
+        top: 0;
+        height: 70%;
+    }
+    .segunda-columna{
+        padding: 0;
+    }
+    .imagen-contenedor .box-columna{
+        bottom: -40%;
+    }
+    .numero{
+        font-size: 40px;
+    }
+    .color-fondo{
+        margin-top: 47.5px;
+        max-height: 25%;
+    }
+}
+
+
 /*Espacio de Mision y Visión*/
 .nosotros-misionVision-container{
     padding-top: 80px; padding-bottom: 50px;
@@ -300,14 +359,50 @@ label{
 .mision,
 .vision{
     text-align: justify;
-    line-height: 1.3;
+    line-height: 1.5;
 }
 .mision{
     margin-left: 180px; margin-right: 60px;
 }
+.mision h3,
+.vision h3{
+    font-weight: lighter;
+    font-size: 22.5px;
+    color: rgb(73, 71, 71);
+}
+.mision h3 strong,
+.vision h3 strong{
+    color: #206cdf;
+}
+.mision p,
+.vision p{
+    color: rgb(116, 110, 110);
+}
 .vision{
     margin-left: 60px; margin-right: 180px;
 }
+@media (width <= 991px){
+    .mision,
+    .vision{
+        margin: 0 70px;
+    }
+}
+@media (width <= 800px){
+    .nosotros-misionVision-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding-top: 40px; padding-bottom: 30px;
+    }
+    .mision h3,
+    .vision h3{
+        font-size: 18.5px;
+    }
+    .mision p,
+    .vision p{
+        font-size: 14px;
+    }
+}
+
 
 /*Espacio de Valores*/
 .nosotros-valores-container{
@@ -326,6 +421,16 @@ label{
     margin-top: 50px;
     line-height: 0.4;
 }
+.valores-texto strong{
+    color: rgb(73, 71, 71);
+    font-weight: lighter;
+    font-size: 22.5px;
+}
+.valores-texto strong h1{
+    font-size: 38.5px;
+    font-weight: bold;
+    color: rgb(238, 147, 44);
+}
 .box-valores{
     margin: 50px 35px;
     display: flex;
@@ -333,6 +438,11 @@ label{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.box-valores h3{
+    font-weight: lighter;
+    font-size: 17.5px;
+    color: rgb(143, 130, 130);
 }
 .box-valores img{
     width: 60px;
@@ -353,7 +463,7 @@ label{
         opacity: 1;
     }
 }
-@media (width <= 700px){
+@media (width <= 800px){
     .valores-imagenes-texto{
         margin: 20px 0;
         display: grid;
@@ -362,6 +472,15 @@ label{
     }
     .box-valores{
         margin: 15px 0;
+    }
+    .valores-texto strong{
+        font-size: 18.5px;
+    }
+    .valores-texto strong h1{
+        font-size: 28.5px;
+    }
+    .box-valores h3{
+        font-size: 14.5px;
     }
 }
 
