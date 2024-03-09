@@ -29,46 +29,54 @@ function colorNegroHeader(){
 
 //Animación de Expansión y Contracción de los productos
 
-const producto_1 = document.getElementById('producto-texto-1');
-const producto_2 = document.getElementById('producto-texto-2');
-const producto_3 = document.getElementById('producto-texto-3');
+const productos = [
+    document.getElementById('slide-1'),
+    document.getElementById('slide-2'),
+    document.getElementById('slide-3'),
+    document.getElementById('slide-4'),
+    document.getElementById('slide-5')
+];
+const estadoProductos = {
+    slide_1: false,
+    slide_2: false,
+    slide_3: false,
+    slide_4: false,
+    slide_5: false
+};
 
 function expandirAnimacion(elemento){
     elemento.style.animation = 'crecimientoBox 0.5s ease forwards';
-    desparecerOtrosProductos(elemento.id);
 }
 function contraerAnimacion(elemento){
-    elemento.style.animation = 'contraerBox 0.5s ease forwards';
-    aparecerOtrosProducto();
+    elemento.style.animation = 'contraerBox 0.15s ease forwards';
 }
 function expandirConClick(elemento) {
-    if(elemento.id == producto_1.id){
-        producto_1.style.backgroundColor = '#cecece';
-    }else if(elemento.id == producto_2.id){
-        producto_2.style.backgroundColor = '#cecece';
-    }else{
-        producto_3.style.backgroundColor = '#cecece';
+    if(!estadoProductos[elemento.id]) { //PRIMER CLICK
+        mantenerEstadoDeExpancion(elemento);
+        OtrosElementosDeProductos(elemento);
+        estadoProductos[elemento.id] = true;
+    }else{ //CLICK DE RETORNO
+        contraerAnimacion(elemento);
+        RestaurarOpacidad();
+        estadoProductos[elemento.id] = false;
     }
 }
-function desparecerOtrosProductos(producto){
-    if(producto == producto_1.id){
-        producto_2.style.opacity = '0.3';
-        producto_3.style.opacity = '0.3';
-    }else if(producto == producto_2.id){
-        producto_1.style.opacity = '0.3';
-        producto_3.style.opacity = '0.3';
-    }else{
-        producto_1.style.opacity = '0.3';
-        producto_2.style.opacity = '0.3';
+function OtrosElementosDeProductos(elemento){
+    var opacidadDeElementos = 0.35;
+    for(let i=0; i<productos.length; i++){
+        if(productos[i].id != elemento.id){
+            productos[i].style.opacity = opacidadDeElementos;
+        }
     }
 }
-function aparecerOtrosProducto(){
-    producto_1.style.opacity = '1';
-    producto_2.style.opacity = '1';
-    producto_3.style.opacity = '1';
+function mantenerEstadoDeExpancion(elemento){
+    expandirAnimacion(elemento);
 }
-
-
+function RestaurarOpacidad(){
+    for(let i=0; i<productos.length; i++){
+        productos[i].style.opacity = 1;
+    }
+}
 
 //Actualización del año en el PIE DE PÁGINA
 var yearElement = document.getElementById('year');
