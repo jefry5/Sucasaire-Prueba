@@ -42,7 +42,14 @@ dropdowns.forEach(dropdowns => {
     });
 });
 
-
+//Animación de Sliders en productos
+var swiper = new Swiper(".productos-swiper", {
+    direction: "vertical",
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 
 //Actualización del año en el PIE DE PÁGINA
 var yearElement = document.getElementById('year');
