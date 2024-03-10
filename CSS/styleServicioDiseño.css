@@ -354,6 +354,8 @@ label{
     justify-items: center;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
 }
 .titulo-productos{
     display: flex;
@@ -361,6 +363,7 @@ label{
     align-items: center;
     text-align: center;
     margin-top: 30px;
+    padding-bottom: 15px;
     line-height: 0.5;
 }
 .titulo-productos strong{
@@ -373,130 +376,84 @@ label{
     font-weight: bold;
     color: rgb(238, 147, 44);
 }
-.productos-slider-diagonal{
+.dropdown{
+    min-width: 15em;
     width: 90%;
-    height: 100%;
-    margin: 40px 0 70px 0;
-    border: 2.5px solid rgb(73, 71, 71,0.35);
-    border-radius: 0.6%;
-}
-.productos-slider-diagonal .wrapper{
-    display: flex;
-    width: 100%;
-    height: 75vh;
-    overflow: hidden;
-}
-.wrapper .slide{
     position: relative;
-    flex-grow: 1;
-    flex-basis: 0;
-    transform: skew(-20deg,0);
-    overflow: hidden;
+    margin: 0.7em 2em;
 }
-.slide:before{
-    cursor: pointer;
-    content: "";
-    width: calc(100% + 400px);
-    height: 100%;
-    position: absolute;
-    background-image: url(../imagen/img-01.jpg);
-    background-size: auto 100%;
-    transform: skew(20deg, 0);
-    margin-left: -150px;
-    background-blend-mode: multiply;
-    background-color: rgba(0, 0, 0, 0.2);
+.dropdown * {
+    box-sizing: border-box;
 }
-.slide:first-child{
-    margin-left: -122px;
-}
-.slide:last-child{
-    margin-right: -122px;
-}
-.slide .front h1{
-    margin: 40px 0 0 50px;
-    font-weight: lighter;
-    font-size: 20px;
-    transform: skew(20deg,0);
+.select{
+    background: radial-gradient(circle, #f2f2f2, rgb(153, 150, 150,0.7));
     color: #fff;
-}
-
-/*Prueba de slider giratorio*/
-.slide div{
-    position: absolute;
-    width: 100%;
-    height: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    backface-visibility: hidden;
-    transition: 1s;
+    border: 2px #2a2f3b solid;
+    border-radius: 0.5em;
+    padding: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
 }
-.slide .front{
-    transform: perspective(500px) rotateY(0deg);
+.select-clicked{
+    border: 2px #26489a solid;
+    box-shadow: 0 0 0.8em #26489a;
 }
-.slide .back{
-    transform: perspective(500px) rotateY(180deg);
+.select:hover{
+    background: #323741;
 }
-.back .back-texto{
-    display: flex;
-    flex-direction: column;
-    font-weight: lighter;
-    font-size: 17px;
-    color: #fff;
-    text-align: justify;
+.caret{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: 0.3s;
 }
-.back-texto .imagen-slider-container{
-    margin-top: 150px;
+.caret-rotate{
+    transform: rotate(180deg);
 }
-.imagen-slider-container h1{
-    font-weight: lighter;
-    font-size: 30px;
+.menu-texto-imagen-container{
+    width: 100%;
+    padding: 0.5em 1em;
+    background: #fff;
+    border: 1px #363a43 solid;
+    box-shadow: inset 0 0 0.4em rgba(0, 0, 0, 0.5);
+    border-radius: 0.5em;
+    color: #9fa5b5;
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+    cursor: default;
 }
-.slide:hover .front{
-    transform: perspective(500px) rotateY(180deg);
+.menu-open{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    animation: expandir 0.7s ease forwards;
 }
-.slide:hover .back{
-    transform: perspective(500px) rotateY(360deg);
-}
-/*Prueba de slider giratorio*/
-
-
-
-.slide-1:before{
-    background-image: url(../imagen/img-01.jpg);
-}
-.slide-2:before{
-    background-image: url(../imagen/img-02.jpeg);
-}
-.slide-3:before{
-    background-image: url(../imagen/img-03.jpg);
-}
-.slide-4:before{
-    background-image: url(../imagen/img-04.jpg);
-}
-.slide-5:before{
-    background-image: url(../imagen/img-05.jpg);
-    background-position-x: -322px;
-}
-@keyframes crecimientoBox {
-    from {
-        flex-grow: 1;
+@keyframes expandir{
+    from{
+        padding-bottom: 0.5em;
+        opacity: 0;
     }
     to{
-        flex-grow: 5;
-    }
-}
-@keyframes contraerBox {
-    from {
-        flex-grow: 5;
-    }
-    to{
-        flex-grow: 1;
+        padding-bottom: 7em;
+        opacity: 1;
     }
 }
 
-/*FALTA HACER LAS ANIMACIONES CORRESPONDIENTES A LOS PRODUCTOS*/
-
+@media (width < 750px){
+    .dropdown{
+        width: 85%;
+    }
+    .menu-open{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
 
 
 /*Pie de Pagina*/

@@ -27,56 +27,22 @@ function colorNegroHeader(){
     }
 }
 
-//Animación de Expansión y Contracción de los productos
+//Animación de DropDownMenu en productos
+const dropdowns = document.querySelectorAll('.dropdown');
 
-const productos = [
-    document.getElementById('slide-1'),
-    document.getElementById('slide-2'),
-    document.getElementById('slide-3'),
-    document.getElementById('slide-4'),
-    document.getElementById('slide-5')
-];
-const estadoProductos = {
-    slide_1: false,
-    slide_2: false,
-    slide_3: false,
-    slide_4: false,
-    slide_5: false
-};
+dropdowns.forEach(dropdowns => {
+    const select = dropdowns.querySelector('.select');
+    const caret = dropdowns.querySelector('.caret');
+    const menu = dropdowns.querySelector('.menu-texto-imagen-container');
 
-function expandirAnimacion(elemento){
-    elemento.style.animation = 'crecimientoBox 0.5s ease forwards';
-}
-function contraerAnimacion(elemento){
-    elemento.style.animation = 'contraerBox 0.15s ease forwards';
-}
-function expandirConClick(elemento) {
-    if(!estadoProductos[elemento.id]) { //PRIMER CLICK
-        mantenerEstadoDeExpancion(elemento);
-        OtrosElementosDeProductos(elemento);
-        estadoProductos[elemento.id] = true;
-    }else{ //CLICK DE RETORNO
-        contraerAnimacion(elemento);
-        RestaurarOpacidad();
-        estadoProductos[elemento.id] = false;
-    }
-}
-function OtrosElementosDeProductos(elemento){
-    var opacidadDeElementos = 0.35;
-    for(let i=0; i<productos.length; i++){
-        if(productos[i].id != elemento.id){
-            productos[i].style.opacity = opacidadDeElementos;
-        }
-    }
-}
-function mantenerEstadoDeExpancion(elemento){
-    expandirAnimacion(elemento);
-}
-function RestaurarOpacidad(){
-    for(let i=0; i<productos.length; i++){
-        productos[i].style.opacity = 1;
-    }
-}
+    select.addEventListener('click', () => {
+        select.classList.toggle('select-clicked');
+        caret.classList.toggle('caret-rotate');
+        menu.classList.toggle('menu-open');
+    });
+});
+
+
 
 //Actualización del año en el PIE DE PÁGINA
 var yearElement = document.getElementById('year');
