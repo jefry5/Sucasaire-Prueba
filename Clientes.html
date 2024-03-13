@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <title>Sucasaire</title>
+    <link rel="shortcut icon" href="imagen/IconoSucasaire.png">
+    <link rel="stylesheet" href="CSS/styleClientes.css">
+
+    <script src="https://kit.fontawesome.com/4d251bd3e3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="Header">
+        <a href="index.html">
+            <img src="imagen/LOGOWHITE.png" class="logo"  alt="">
+        </a>
+
+        <input type="checkbox"  id="menu" onclick="colorNegroHeader()" />
+        <label for="menu">
+            <img src="imagen/menu.png" class="menu-icono" alt="">
+        </label>
+
+        <nav class="menu">
+            <div class="menu-container">
+                <ul>
+                    <li class="item"><a href="Nosotros.html">Nosotros</a></li>
+                    <li class="item"><a href="##">Servicios</a>
+                        <ul>
+                            <li class="sub-item"><a href="ServicioDiseño.html">Diseño</a></li>
+                            <li class="sub-item"><a href="ServicioImpresión.html">Impresión</a></li>
+                            <li class="sub-item"><a href="ServicioPublicidad.html">Publicidad externa e interna</a></li>
+                        </ul>
+                    </li>
+                    <li class="item"><a href="Clientes.html">Clientes</a></li>
+                    <li class="item"><a href="Cobertura.html">Cobertura</a></li>
+                    <li class="item"><a href="Blog.html">Blog</a></li>
+                    <li class="item"><a href="Contacto.html">Contacto</a></li>
+                </ul>
+                <li class="btn">(01)999 0000</li>
+            </div>
+        </nav>
+    </header>
+
+    <div class="clientes-container">
+        <div class="text-container-clientes">
+            <h1>¡Confían en nosotros! <br> <strong>CLIENTES</strong></h1>
+        </div>
+    </div>
+
+
+    <div class="clientes-texto-container">
+        <div class="imagenes-clientes">
+            <div class="box-imagen" id="box-1">
+                <img src="imagen/LogoEjemplo.jpg" alt="">
+            </div>
+            <div class="box-imagen" id="box-2">
+                <img src="imagen/LogoEjemplo.jpg" alt="">
+            </div>
+            <div class="box-imagen" id="box-3">
+                <img src="imagen/LogoEjemplo.jpg" alt="">
+            </div>
+            <div class="box-imagen" id="box-4">
+                <img src="imagen/LogoEjemplo.jpg" alt="">
+            </div>
+            <div class="box-imagen" id="box-5">
+                <img src="imagen/LogoEjemplo.jpg" alt="">
+            </div>
+            <div class="box-imagen" id="box-6">
+                <img src="imagen/LogoEjemplo.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- Pie de Pagina -->
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="imagen/LOGOWHITE 03.png" alt="Logo de Sucasaire">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, voluptatum.</p>
+                <h2>HORARIO DE ATENCIÓN</h2>
+                <p> <img src="imagen/horario.png" alt=""> L - S de: 8:00 a.m a 10:00 p.m</p>
+            </div>
+            <div class="box">
+                <h2>UBICACIÓN</h2>
+                <P> <img src="imagen/Ubicación.png" alt=""> Cl. XX Mz. X Lt. XXX, Urb. Los Ejemplos. Ciudad Ejemplo, Lima</P>
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>    
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small id="year"></small>
+        </div>
+    </footer>
+
+    <script src="JS/scriptClientes.js"></script>
+</body>
+</html>
